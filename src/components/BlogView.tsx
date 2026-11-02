@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useLocation } from 'react-router-dom';
 import { Navbar } from './Navbar';
+import { blogs } from '../data/blogsData';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
@@ -10,7 +11,7 @@ const BlogView: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const location = useLocation();
   const [content, setContent] = useState<string>('');
-  const title = location.state?.title || 'Blog Details';
+  const title = location.state?.title || blogs.find((b) => b.id === id)?.title || 'Blog Details';
 
   useEffect(() => {
     const loadBlog = async () => {
