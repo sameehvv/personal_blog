@@ -11,7 +11,7 @@ export const HeaderBlock = () => (
     />
     <h1 className="text-2xl font-medium leading-tight font-mono text-green-400 ">
       Hey, I'm Sameeh!{" "}
-      <span className="text-zinc-400 text-lg font-mono">Offensive Security Consultant. Web, Active Directory and red team assessments.</span>
+      <span className="text-zinc-400 text-lg font-mono">Offensive Security Consultant</span>
     </h1>
   </Block>
 );

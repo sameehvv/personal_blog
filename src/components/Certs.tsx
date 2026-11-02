@@ -58,6 +58,7 @@ const certs = [
 
 const CertCard = ({ cert }: { cert: (typeof certs)[number] }) => {
   const [flipped, setFlipped] = useState(false);
+  const [logoFailed, setLogoFailed] = useState(false);
   return (
     <button
       type="button"
@@ -65,24 +66,32 @@ const CertCard = ({ cert }: { cert: (typeof certs)[number] }) => {
       onMouseEnter={() => setFlipped(true)}
       onMouseLeave={() => setFlipped(false)}
       onClick={() => setFlipped((f) => !f)}
-      className="relative h-[290px] w-full text-left [perspective:800px] focus:outline-none"
+      className="relative h-[270px] w-full text-left [perspective:800px] focus:outline-none"
     >
       <div
         className={`relative h-full w-full transition-transform duration-500 [transform-style:preserve-3d] ${
           flipped ? '[transform:rotateY(180deg)]' : ''
         }`}
       >
-        <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 rounded-2xl border border-zinc-800 px-3 text-center [backface-visibility:hidden]">
-          <img
-            src={cert.src}
-            alt=""
-            loading="lazy"
-            referrerPolicy="no-referrer"
-            className="h-24 w-auto object-contain"
-          />
-          <span className="font-mono text-sm leading-snug text-zinc-200">{cert.title}</span>
+        <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 px-2 text-center [backface-visibility:hidden]">
+          {logoFailed ? (
+            <div className="flex h-24 w-24 items-center justify-center rounded-full border border-zinc-700 font-mono text-xl text-green-400">
+              {cert.short}
+            </div>
+          ) : (
+            <img
+              src={cert.src}
+              alt={cert.title}
+              loading="lazy"
+              referrerPolicy="no-referrer"
+              onError={() => setLogoFailed(true)}
+              className="h-24 w-auto object-contain"
+            />
+          )}
+          <span className="font-mono text-lg font-semibold text-zinc-100">{cert.short}</span>
+          <span className="font-mono text-xs leading-snug text-zinc-500">{cert.title}</span>
         </div>
-        <div className="absolute inset-0 flex flex-col justify-center gap-2 rounded-2xl border border-green-400/40 bg-zinc-950 p-3 font-mono [backface-visibility:hidden] [transform:rotateY(180deg)]">
+        <div className="absolute inset-0 flex flex-col justify-center gap-2 rounded-2xl bg-zinc-900/80 p-4 font-mono [backface-visibility:hidden] [transform:rotateY(180deg)]">
           <span className="text-sm font-semibold text-green-400">{cert.short}</span>
           <ul className="space-y-1.5 text-[11px] leading-snug text-zinc-300">
             {cert.learned.map((l) => (
@@ -97,8 +106,11 @@ const CertCard = ({ cert }: { cert: (typeof certs)[number] }) => {
 
 export const Certs = () => (
   <Block className="col-span-4 row-span-1 lg:col-span-8 lg:row-span-1 relative flex flex-col">
-    <h2 className="text-xl lg:text-2xl font-mono mb-4 text-green-400">Certifications</h2>
-    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5">
+    <div className="mb-4 flex flex-wrap items-baseline justify-between gap-2">
+      <h2 className="text-xl lg:text-2xl font-mono text-green-400">Certifications</h2>
+      <span className="font-mono text-xs text-zinc-500">Hover or tap a card to see what I learned</span>
+    </div>
+    <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-5 lg:divide-x lg:divide-zinc-800">
       {certs.map((cert) => (
         <CertCard key={cert.short} cert={cert} />
       ))}
