@@ -23,7 +23,7 @@ export const RevealBento = () => {
         initial="initial"
         animate="animate"
         transition={{ staggerChildren: 0.05 }}
-        className="relative mx-auto grid max-w-7xl grid-flow-dense gap-4 pt-20 p-3 grid-cols-4 auto-rows-[minmax(96px,auto)] lg:auto-rows-auto lg:grid-cols-8 lg:grid-rows-6"
+        className="relative mx-auto grid max-w-7xl grid-flow-dense gap-4 pt-20 p-3 grid-cols-4 auto-rows-[minmax(104px,auto)] lg:grid-cols-8"
       >
         <HeaderBlock />
         <Blog />

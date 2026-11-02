@@ -4,7 +4,7 @@ import { SiX } from "react-icons/si";
 
 export const Twitter = () => (
   <Block 
-    className="col-span-2 row-span-1 sm:col-span-2 sm:row-span-1 md:col-span-2 md:row-span-1 lg:col-span-2 lg:row-span-2 p-4 relative flex items-center justify-center"
+    className="col-span-2 row-span-1 sm:col-span-2 sm:row-span-1 md:col-span-2 md:row-span-1 lg:col-span-2 lg:row-span-1 p-4 relative flex items-center justify-center"
   >
     <a 
       href="https://x.com/sameehvv" 

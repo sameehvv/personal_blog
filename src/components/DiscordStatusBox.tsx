@@ -64,23 +64,23 @@ export const DiscordStatusBox = () => {
       : '';
 
     return (
-      <div className="absolute inset-0 flex flex-col items-center justify-center p-4 group overflow-hidden">
+      <div className="absolute inset-0 flex flex-row items-center justify-center gap-3 p-2 group overflow-hidden">
         <img
           src={avatarUrl}
           alt={username}
-          className={`w-10 h-10 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-16 lg:h-16 rounded-full border-green-500 ${isHovered ? 'opacity-100' : 'opacity-0'} transition-opacity`}
+          className={`w-10 h-10 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-12 lg:h-12 shrink-0 rounded-full border-green-500 ${isHovered ? 'opacity-100' : 'opacity-0'} transition-opacity`}
         />
-        <div className={`text-white flex flex-col items-center justify-center ${isHovered ? 'opacity-100' : 'opacity-0'} transition-opacity mt-2`}>
+        <div className={`text-white flex flex-col items-start justify-center min-w-0 ${isHovered ? 'opacity-100' : 'opacity-0'} transition-opacity`}>
           <a
             href={profileUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-xs sm:text-sm md:text-base lg:text-lg font-mono"
+            className="text-xs sm:text-sm md:text-base lg:text-base font-mono truncate max-w-full"
           >
             {username || 'Unknown User'}
           </a>
           <div className="flex items-center mt-1">
-            <div className={`w-2 h-2 sm:w-2 sm:h-2 md:w-3 md:h-3 lg:w-4 lg:h-4 rounded-full ${statusColor}`} />
+            <div className={`w-2 h-2 sm:w-2 sm:h-2 md:w-3 md:h-3 lg:w-3 lg:h-3 rounded-full ${statusColor}`} />
             <span className="ml-2 text-xs sm:text-sm md:text-sm lg:text-sm capitalize font-mono">{discord_status || 'unknown'}</span>
           </div>
         </div>
@@ -90,7 +90,7 @@ export const DiscordStatusBox = () => {
 
   return (
     <Block
-      className="col-span-2 row-span-1 sm:col-span-2 sm:row-span-1 md:col-span-2 md:row-span-1 lg:col-span-2 lg:row-span-2 flex items-center justify-center p-4 relative bg-no-repeat group overflow-hidden"
+      className="col-span-2 row-span-1 sm:col-span-2 sm:row-span-1 md:col-span-2 md:row-span-1 lg:col-span-2 lg:row-span-1 flex items-center justify-center p-4 relative bg-no-repeat group overflow-hidden"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
