@@ -11,7 +11,7 @@ export const Blog = () => {
 
   return (
     <Block 
-      className="col-span-4 row-span-2 sm:col-span-4 sm:row-span-2 md:col-span-4 md:row-span-2 lg:col-span-4 lg:row-span-2 relative flex items-center justify-center p-4"
+      className="col-span-4 row-span-2 sm:col-span-4 sm:row-span-2 md:col-span-4 md:row-span-2 lg:col-span-6 lg:row-span-2 relative flex items-center justify-center p-4"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
