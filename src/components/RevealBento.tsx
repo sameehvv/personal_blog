@@ -11,6 +11,9 @@ import { DiscordStatusBox } from './DiscordStatusBox';
 import { Github } from './Github';
 import { Linkedin } from './Linkedin';
 import { Twitter } from './Twitter';
+import { Tools } from './Tools';
+import { WhatITest } from './WhatITest';
+import { AttackChain } from './AttackChain';
 
 export const RevealBento = () => {
   return (
@@ -34,6 +37,9 @@ export const RevealBento = () => {
         <Github />
         <Linkedin />
         <Twitter />
+        <Tools />
+        <WhatITest />
+        <AttackChain />
       </motion.div>
     </div>
   );
