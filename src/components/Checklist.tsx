@@ -7,7 +7,7 @@ export const Checklist = () => {
 
   return (
     <Block 
-      className="col-span-4 row-span-1 sm:col-span-4 sm:row-span-1 md:col-span-4 md:row-span-1 lg:col-span-3 lg:row-span-2 relative"
+      className="col-span-4 row-span-1 sm:col-span-4 sm:row-span-1 md:col-span-4 md:row-span-1 lg:col-span-4 lg:row-span-2 relative"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >

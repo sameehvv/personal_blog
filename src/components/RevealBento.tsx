@@ -27,7 +27,6 @@ export const RevealBento = () => {
       >
         <HeaderBlock />
         <Blog />
-        <Certs />
         <Checklist />
         <HTB />
         <THM />
@@ -35,6 +34,7 @@ export const RevealBento = () => {
         <Github />
         <Linkedin />
         <Twitter />
+        <Certs />
         <WhatITest />
       </motion.div>
     </div>

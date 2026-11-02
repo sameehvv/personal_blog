@@ -7,7 +7,7 @@ export const HTB = () => {
 
   return (
     <Block
-      className="col-span-4 row-span-1 sm:col-span-4 sm:row-span-1 md:col-span-4 md:row-span-1 lg:col-span-3 lg:row-span-1 flex items-center justify-center p-4 relative group overflow-hidden"
+      className="col-span-4 row-span-1 sm:col-span-4 sm:row-span-1 md:col-span-4 md:row-span-1 lg:col-span-4 lg:row-span-1 flex items-center justify-center p-4 relative group overflow-hidden"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
