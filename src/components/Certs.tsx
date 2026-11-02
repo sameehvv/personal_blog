@@ -8,31 +8,31 @@ const certs = [
     src: 'https://images.credly.com/images/ec81134d-e80b-4eb5-ae07-0eb8e1a60fcd/image.png',
     alt: 'OffSec Certified Professional (OSCP)',
     short: 'OSCP',
-    proves: '24h hands-on exam: network and AD compromise',
+    proves: "24h hands-on exam: compromised a live network and AD, then wrote the report.",
   },
   {
     src: 'https://media.badges.parchment.eu/uploads/badges/810fb737-3709-422a-9544-e8329e6f9eb7.png',
     alt: 'Certified Red Team Operator (CRTO)',
     short: 'CRTO',
-    proves: 'Red team ops, C2 and AD attack chains',
+    proves: "Full red team ops with C2: access, privesc and lateral movement through AD.",
   },
   {
     src: '/images/certificates/bscp.svg',
     alt: 'Burp Suite Certified Practitioner',
     short: 'BSCP',
-    proves: 'Practical web exam with Burp Suite',
+    proves: "Found and exploited real web vulns under time pressure using Burp Suite.",
   },
   {
     src: '/images/certificates/ecppt.png',
     alt: 'eLearnSecurity Certified Professional Penetration Tester',
     short: 'eCPPT',
-    proves: 'Practical network pentest and pivoting',
+    proves: "Practical exam: pentested a network, pivoted across hosts, wrote the report.",
   },
   {
     src: '/images/certificates/ceh.png',
     alt: 'Certified Ethical Hacker v11',
     short: 'CEH',
-    proves: 'Ethical hacking tools and methodology',
+    proves: "Covers core ethical hacking: scanning, enumeration, attacks and countermeasures.",
   },
 ];
 
