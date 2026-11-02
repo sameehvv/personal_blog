@@ -13,7 +13,7 @@ export const AttackChain = () => {
   const [active, setActive] = useState(0);
   return (
     <Block className="col-span-4 row-span-2 lg:col-span-8 lg:row-span-1 relative flex flex-col justify-center">
-      <div className="flex items-center justify-between gap-1 font-mono text-[11px] sm:text-sm">
+      <div className="flex flex-col sm:flex-row items-center justify-between gap-1 font-mono text-sm">
         {steps.map((s, i) => (
           <React.Fragment key={s.name}>
             <button
@@ -21,14 +21,14 @@ export const AttackChain = () => {
               onMouseEnter={() => setActive(i)}
               onFocus={() => setActive(i)}
               onClick={() => setActive(i)}
-              className={`rounded-lg border px-1.5 sm:px-4 py-2 transition-all duration-200 ${
+              className={`rounded-lg border px-4 py-1.5 sm:py-2 transition-all duration-200 ${
                 i <= active ? 'border-green-400 text-green-400' : 'border-zinc-800 text-zinc-500'
               }`}
             >
               {s.name}
             </button>
             {i < steps.length - 1 && (
-              <span className={`h-px flex-1 min-w-[2px] transition-colors duration-200 ${i < active ? 'bg-green-400' : 'bg-zinc-800'}`} />
+              <span className={`h-3 w-px sm:h-px sm:w-auto sm:flex-1 sm:min-w-[2px] transition-colors duration-200 ${i < active ? 'bg-green-400' : 'bg-zinc-800'}`} />
             )}
           </React.Fragment>
         ))}

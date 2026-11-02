@@ -4,7 +4,7 @@ import { SiGithub } from "react-icons/si";
 
 export const Github = () => (
   <Block 
-    className="col-span-2 row-span-2 sm:col-span-2 sm:row-span-2 md:col-span-2 md:row-span-2 lg:col-span-2 lg:row-span-2 flex items-center justify-center p-4 relative"
+    className="col-span-2 row-span-1 sm:col-span-2 sm:row-span-1 md:col-span-2 md:row-span-1 lg:col-span-2 lg:row-span-2 flex items-center justify-center p-4 relative"
   >
     <a 
       href="https://github.com/sameehvv" 

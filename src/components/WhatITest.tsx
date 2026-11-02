@@ -15,7 +15,7 @@ const areas = [
 export const WhatITest = () => {
   const [active, setActive] = useState(0);
   return (
-    <Block className="col-span-4 row-span-2 lg:col-span-4 lg:row-span-2 relative flex flex-col">
+    <Block className="col-span-4 row-span-1 lg:col-span-4 lg:row-span-2 relative flex flex-col">
       <h2 className="text-xl font-mono mb-3 text-green-400">What I test</h2>
       <div className="flex flex-wrap gap-2 font-mono text-sm">
         {areas.map((a, i) => (

@@ -7,27 +7,32 @@ const certs = [
   {
     src: 'https://images.credly.com/images/ec81134d-e80b-4eb5-ae07-0eb8e1a60fcd/image.png',
     alt: 'OffSec Certified Professional (OSCP)',
-    proves: 'OffSec PEN-200: 24h hands-on exam, network and AD compromise',
+    short: 'OSCP',
+    proves: '24h hands-on exam: network and AD compromise',
   },
   {
     src: 'https://media.badges.parchment.eu/uploads/badges/810fb737-3709-422a-9544-e8329e6f9eb7.png',
     alt: 'Certified Red Team Operator (CRTO)',
-    proves: 'Zero-Point Security: red team ops, C2 and AD attack chains',
+    short: 'CRTO',
+    proves: 'Red team ops, C2 and AD attack chains',
   },
   {
     src: '/images/certificates/bscp.svg',
     alt: 'Burp Suite Certified Practitioner',
-    proves: 'PortSwigger: practical web exam, hands-on with Burp Suite',
+    short: 'BSCP',
+    proves: 'Practical web exam with Burp Suite',
   },
   {
     src: '/images/certificates/ecppt.png',
     alt: 'eLearnSecurity Certified Professional Penetration Tester',
-    proves: 'INE: practical network pentest, pivoting and reporting',
+    short: 'eCPPT',
+    proves: 'Practical network pentest and pivoting',
   },
   {
     src: '/images/certificates/ceh.png',
     alt: 'Certified Ethical Hacker v11',
-    proves: 'EC-Council v11: ethical hacking tools and methodology',
+    short: 'CEH',
+    proves: 'Ethical hacking tools and methodology',
   },
 ];
 
@@ -40,7 +45,7 @@ const CertCard = ({ cert }: { cert: (typeof certs)[number] }) => {
       onMouseEnter={() => setFlipped(true)}
       onMouseLeave={() => setFlipped(false)}
       onClick={() => setFlipped((f) => !f)}
-      className="relative h-16 w-full max-w-[220px] [perspective:600px] focus:outline-none"
+      className="relative h-[84px] w-full max-w-[240px] [perspective:600px] focus:outline-none"
     >
       <div
         className={`relative h-full w-full transition-transform duration-500 [transform-style:preserve-3d] ${
@@ -53,11 +58,12 @@ const CertCard = ({ cert }: { cert: (typeof certs)[number] }) => {
             alt={cert.alt}
             loading="lazy"
             referrerPolicy="no-referrer"
-            className="h-full w-auto object-contain"
+            className="h-16 w-auto object-contain"
           />
         </div>
-        <div className="absolute inset-0 flex items-center justify-center rounded-xl border border-zinc-800 px-2 text-center font-mono text-[10px] leading-tight text-green-400 [backface-visibility:hidden] [transform:rotateY(180deg)]">
-          {cert.proves}
+        <div className="absolute inset-0 flex flex-col items-center justify-center gap-0.5 rounded-xl border border-zinc-800 bg-zinc-950 px-2 text-center font-mono [backface-visibility:hidden] [transform:rotateY(180deg)]">
+          <span className="text-sm font-semibold text-green-400">{cert.short}</span>
+          <span className="text-[11px] leading-snug text-zinc-300">{cert.proves}</span>
         </div>
       </div>
     </button>

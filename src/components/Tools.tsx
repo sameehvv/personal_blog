@@ -15,7 +15,7 @@ const tools = [
 export const Tools = () => {
   const [active, setActive] = useState<number | null>(null);
   return (
-    <Block className="col-span-4 row-span-2 lg:col-span-4 lg:row-span-2 relative flex flex-col">
+    <Block className="col-span-4 row-span-1 lg:col-span-4 lg:row-span-2 relative flex flex-col">
       <h2 className="text-xl font-mono mb-3 text-green-400 flex items-center gap-2">
         <FiGithub /> Tools I built
       </h2>
